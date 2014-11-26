@@ -12,6 +12,7 @@ import "gopkg.in/alecthomas/kingpin.v1"
 var (
   port              = kingpin.Flag("port", "The port to be used.").Default(generator.RandomStr(1024, 65535)).Int()
   network_interface = kingpin.Flag("interface",  "The network interface to be used.").Default( "127.0.0.1").String()
+  silent            = kingpin.Flag("silent", "Make server silent").Bool()
 )
 
 const version = "0.0.1"
@@ -29,6 +30,6 @@ func main() {
   kingpin.Version(version)
   kingpin.Parse()
 
-  webserver.Open_browser(fmt.Sprintf("http://%s:%d/index.html", *network_interface, *port))
-  webserver.Start(application.Working_directory(), fmt.Sprintf("%s:%d", *network_interface, *port))
+  webserver.Open_browser(fmt.Sprintf("http://%s:%d/index.html", *network_interface, *port), *silent)
+  webserver.Start(application.Working_directory(), fmt.Sprintf("%s:%d", *network_interface, *port), *silent)
 }
