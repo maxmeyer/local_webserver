@@ -31,6 +31,36 @@ Requests:
 
 ## Development
 
+### Prepare
+
+See [this page](http://docs.drone.io/golang.html) for a good introduction for a
+`Go`-installation which can compile `Go`-binaries for multiple operating
+systems - tested on Archlinux (64bit) only.
+
+*Clone repository*
+
+```bash
+hg clone -u release https://code.google.com/p/go <golang_path>
+hg update default
+```
+
+*Build go*
+
+```bash
+cd <golang_path>
+GOOS=windows GOARCH=amd64 ./make.bash --no-clean 2> /dev/null 1> /dev/null
+GOOS=darwin  GOARCH=amd64 ./make.bash --no-clean 2> /dev/null 1> /dev/null
+GOOS=linux  GOARCH=amd64 ./make.bash --no-clean 2> /dev/null 1> /dev/null
+```
+
+*Add to PATH*
+
+```bash
+export PATH=<golang_path>/bin:$PATH
+```
+
+### Build app
+
 To build the software you need to run the following command:
 
 ```bash
