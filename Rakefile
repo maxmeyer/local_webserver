@@ -3,7 +3,7 @@
 task default: 'app:build'
 
 namespace :app do
-  source_file = 'src/server.go'
+  source_file = 'server.go'
   destination_file = 'bin/server'
 
   task :clean do
