@@ -29,6 +29,14 @@ Requests:
 127.0.0.1 - - [26/Nov/2014:14:34:10 +0100] "GET / HTTP/1.1" 200 41 "" "Mozilla/5.0 (X11; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/33.0"
 ```
 
+## Development
+
+To build the software you need to run the following command:
+
+```bash
+rake app:build
+```
+
 ## License
 
 Please see the [LICENSE.md](LICENSE.md).
