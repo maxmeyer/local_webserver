@@ -1,4 +1,4 @@
-# local webserver
+# Local Webserver
 
 This repository provides a local webserver which serves the local directory in
 which it was stored. If the server ist stored at

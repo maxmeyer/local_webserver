@@ -6,3 +6,5 @@ set -e
 
 echo "Install go package manager"
 go get github.com/mattn/gom
+
+gom install
