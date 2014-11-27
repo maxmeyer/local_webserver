@@ -8,7 +8,7 @@ import "os"
 import "github.com/skratchdot/open-golang/open"
 import "github.com/gorilla/handlers"
 
-func Open_browser(url string, silent bool) {
+func OpenBrowser(url string, silent bool) {
   if ( silent == false ) {
     fmt.Printf("Open browser with %s\n", url)
   }
@@ -20,7 +20,7 @@ func Open_browser(url string, silent bool) {
   }
 }
 
-func Start(directory string, bind string, silent bool) {
+func StartServer(directory string, bind string, silent bool) {
   if ( silent == false ) {
     fmt.Printf("Server listens on %s\n", bind)
     fmt.Printf("\nRequests:\n")

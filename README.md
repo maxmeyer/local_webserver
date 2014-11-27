@@ -31,40 +31,52 @@ Requests:
 
 ## Development
 
-### Prepare
-
 See [this page](http://docs.drone.io/golang.html) for a good introduction for a
 `Go`-installation which can compile `Go`-binaries for multiple operating
 systems - tested on Archlinux (64bit) only.
 
-*Clone repository*
+### Configure shell
+
+This is optional and highly opionated. Just make sure the go path is set
+correctly.
+
+**.bashrc** / **.zshrc**
+
+```bash
+export GOPATH=~/.local/share/go
+export PATH=~/.local/share/go/bin:$PATH
+export PATH=~/.local/share/golang/bin:$PATH
+```
+
+### Clone repository
 
 ```bash
 hg clone -u release https://code.google.com/p/go <golang_path>
 hg update default
 ```
 
-*Build go*
+### Build go
 
 ```bash
-cd <golang_path>
+cd <golang_path>/src
 GOOS=windows GOARCH=amd64 ./make.bash --no-clean 2> /dev/null 1> /dev/null
 GOOS=darwin  GOARCH=amd64 ./make.bash --no-clean 2> /dev/null 1> /dev/null
 GOOS=linux  GOARCH=amd64 ./make.bash --no-clean 2> /dev/null 1> /dev/null
 ```
 
-*Add to PATH*
+### Bootstrap application
 
 ```bash
-export PATH=<golang_path>/bin:$PATH
+./bootstrap.sh
 ```
 
-### Build app
+### Build application
 
-To build the software you need to run the following command:
+To build the software you need to run the following command. This will create
+three files.
 
 ```bash
-rake app:build
+./build.sh
 ```
 
 ## License
