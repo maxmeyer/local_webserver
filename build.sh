@@ -19,7 +19,13 @@ for os in windows linux darwin; do
       output_path=$destination_directory/${source_file/.go}.$os.$arch$ext
 
       echo "Building application for os $os and arch $arch: $output_path" >&2
-      GOOS=$os GOARCH=$arch gom build -o $output_path $source_file
+      GOOS=$os GOARCH=$arch go build -o $output_path $source_file
+
+      if [ "$os" == "linux" ]; then
+        goupx $output_path
+      else
+        upx $output_path
+      fi
     done
   done
 done
