@@ -73,7 +73,7 @@ GOOS=linux  GOARCH=amd64 ./make.bash --no-clean 2> /dev/null 1> /dev/null
 ### Build application
 
 To build the software you need to run the following command. This will create
-three files.
+the executable files.
 
 ```bash
 ./build.sh
