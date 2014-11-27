@@ -2,7 +2,9 @@
 
 set -e
 
-[[ -z "$GOPATH" ]] && echo "Please set GOPATH" >&2
+[[ -n "$GOPATH" ]] || ( echo "[ERROR] Please set GOPATH!" >&2; exit 1 )
+
+which 'upx' >/dev/null 2>&1 || ( echo "[ERROR] Please install upx!" >&2; exit 1 )
 
 echo "Install go package manager"
 
